@@ -1,0 +1,41 @@
+[http "https://bbgithub.dev.bloomberg.com/"]
+  proxy = http://bproxy.tdmz1.bloomberg.com:80
+
+[http "https://github.com"]
+  proxy = proxy.bloomberg.com:81
+  sslVerify = false
+
+[url "https://kschuler5@bbgithub.dev.bloomberg.com/"]
+     insteadOf = bbgithub:
+
+[user]
+        email = kschuler5@bloomberg.net
+        name = Kathrin Schuler
+
+[clangFormat]
+        binary = /opt/bb/lib/llvm-3.8/bin/clang-format
+        style = file
+
+[alias]
+        clang-format = !/opt/bb/lib/llvm-3.8/bin/git-clang-format
+
+[alias]
+    co = checkout
+    com = checkout master
+    cob = checkout -b
+    tree = log --oneline --decorate --all --graph
+    s= status -sb
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    cleanup = !git branch --merged | grep  -v '\\*\\|master\\|dev' | xargs -n 1 git branch -d
+    branch-overview = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' 
+    lg = log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %s %C(blue) - %an - %Creset %C(yellow)%d%Creset' --abbrev-commit --all
+    t = log --graph --oneline --pretty=format:'%C(auto)%h%C(reset) %s %C(auto)%d%Creset' --abbrev-commit --all
+    r = rebase master
+
+
+[core]
+	editor = vim
+	excludesfile = /home/kathrin/.gitignore_global
+
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
