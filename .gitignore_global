@@ -1,0 +1,7 @@
+*.idea
+*.cache
+*.pyc
+*pytest_cache
+*.log
+tests_results.linux.xml
+tests_results*

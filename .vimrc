@@ -182,30 +182,30 @@ colorscheme solarized
 let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
 
-"" CLang Format                                                        
-"" -----------------------------------                                 
-let g:clang_format#command = "/opt/bb/lib/llvm-3.8/bin/clang-format"   
-let g:clang_format#detect_style_file=1                                 
-                                                                       
-nnoremap <Leader>a :ClangFormat<CR>                                    
+"" CLang Format
+"" -----------------------------------
+let g:clang_format#command = "/usr/bin/clang-format"
+let g:clang_format#detect_style_file=1
 
-"delimitMate                                           
-"" -----------------------------------                  
-let g:delimitMate_expand_cr=1                          
-let g:delimitMate_excluded_regions = "Comment,String"  
+nnoremap <Leader>a :ClangFormat<CR>
 
-" Nerdtree                                                                                                
-" -----------------------------------                                                                     
-" let g:NERDTreeDirArrows=0                                                                               
-nmap <C-n> :NERDTreeToggle<CR>                                                                            
-autocmd StdinReadPre * let s:std_in=1                                                                     
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif                               
-autocmd bufenter * if ( winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree() ) | q | endif   
-                                                                                                          
-let NERDTreeIgnore=['\.o$', '\.a$', '^00', '^tags$', '\.d$']                                              
+"delimitMate
+"" -----------------------------------
+let g:delimitMate_expand_cr=1
+let g:delimitMate_excluded_regions = "Comment,String"
 
-" Better Whitespace                    
-" -----------------------------------  
-"Strip Whitespace                      
-map <F10> :StripWhitespace<CR>         
-                                                                                                          
+" Nerdtree
+" -----------------------------------
+" let g:NERDTreeDirArrows=0
+nmap <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if ( winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree() ) | q | endif
+
+let NERDTreeIgnore=['\.o$', '\.a$', '^00', '^tags$', '\.d$']
+
+" Better Whitespace
+" -----------------------------------
+"Strip Whitespace
+map <F10> :StripWhitespace<CR>
+
