@@ -219,3 +219,6 @@ export PROMPT_COMMAND=prompt_command
 #fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# use z:
+. /home/kathrin/.z_dir/z.sh
