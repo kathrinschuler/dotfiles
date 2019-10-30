@@ -1,23 +1,8 @@
-[http "https://bbgithub.dev.bloomberg.com/"]
-  proxy = http://bproxy.tdmz1.bloomberg.com:80
-
-[http "https://github.com"]
-  proxy = proxy.bloomberg.com:81
-  sslVerify = false
-
-[url "https://kschuler5@bbgithub.dev.bloomberg.com/"]
-     insteadOf = bbgithub:
-
 [user]
-        email = kschuler5@bloomberg.net
         name = Kathrin Schuler
 
 [clangFormat]
-        binary = /opt/bb/lib/llvm-3.8/bin/clang-format
         style = file
-
-[alias]
-        clang-format = !/opt/bb/lib/llvm-3.8/bin/git-clang-format
 
 [alias]
     co = checkout
